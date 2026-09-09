@@ -1,0 +1,223 @@
+:root {
+  color-scheme: light dark;
+
+  --canvas: #f3f0e9;
+  --textPrimary: #30363b;
+  --background: #fffdf8;
+  --body-border-color: #ded8cc;
+  --link: #087b83;
+  --link-highlight: rgb(8 123 131 / 12%);
+  --code-background: #f1eee7;
+  --hr-background: #ded8cc;
+  --thead-background: #ece8df;
+  --thead-border: #d6d0c4;
+  --tr-border: #d6d0c4;
+  --tr-alt-background: #f7f4ee;
+  --kbd-background: #f1eee7;
+  --kbd-color: #4c5358;
+  --kbd-border: #cfc8bb;
+  --blockquote-color: #59656a;
+  --blockquote-border: #d47a61;
+  --heading-color: #25343a;
+  --header-bottom-border: #ddd6ca;
+  --h6-color: #69747a;
+  --frame-border: #d6d0c4;
+  --frame-color: #30363b;
+  --mention-color: #6955a5;
+  --keyword-color: #7b6ca8;
+
+  --accent: #087b83;
+  --secondary: #735da5;
+  --inline-code: #9a4e3c;
+  --quote-background: #faf0e9;
+  --mark-background: #f5dda0;
+  --selection: #cbe8e5;
+
+  --hl_Background: #f3f0e9;
+  --hl_Number: #9a4e3c;
+  --hl_Escape: #b25b42;
+  --hl_String: #487848;
+  --hl_String_Pre_Processor: #487848;
+  --hl_Block_Comment: #858178;
+  --hl_Line_Comment: #858178;
+  --hl_Pre_Processor: #735da5;
+  --hl_Line_Number: #999388;
+  --hl_Operator: #526875;
+  --hl_Interpolation: #b25b42;
+  --hl_Keyword-1: #087b83;
+  --hl_Keyword-2: #735da5;
+  --hl_Keyword-3: #30363b;
+  --hl_Keyword-4: #a55b75;
+  --hl_Keyword-5: #087b83;
+  --hl_Keyword-6: #735da5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --canvas: #101416;
+    --textPrimary: #d5dcdb;
+    --background: #181d20;
+    --body-border-color: #343c40;
+    --link: #72c9c7;
+    --link-highlight: rgb(114 201 199 / 14%);
+    --code-background: #242b2e;
+    --hr-background: #343c40;
+    --thead-background: #252d30;
+    --thead-border: #3a4448;
+    --tr-border: #3a4448;
+    --tr-alt-background: #1e2528;
+    --kbd-background: #252d30;
+    --kbd-color: #d5dcdb;
+    --kbd-border: #465155;
+    --blockquote-color: #b5bfbd;
+    --blockquote-border: #e19279;
+    --heading-color: #f0ece4;
+    --header-bottom-border: #394144;
+    --h6-color: #a7b0ae;
+    --frame-border: #3a4448;
+    --frame-color: #d5dcdb;
+    --mention-color: #c1afe8;
+    --keyword-color: #b8a7df;
+
+    --accent: #72c9c7;
+    --secondary: #b8a7df;
+    --inline-code: #efa58e;
+    --quote-background: #272426;
+    --mark-background: #665629;
+    --selection: #284d4e;
+
+    --hl_Background: #121719;
+    --hl_Number: #efa58e;
+    --hl_Escape: #efa58e;
+    --hl_String: #a8cf9d;
+    --hl_String_Pre_Processor: #a8cf9d;
+    --hl_Block_Comment: #85908e;
+    --hl_Line_Comment: #85908e;
+    --hl_Pre_Processor: #c1afe8;
+    --hl_Line_Number: #626d6b;
+    --hl_Operator: #b7d6d5;
+    --hl_Interpolation: #edbd78;
+    --hl_Keyword-1: #72c9c7;
+    --hl_Keyword-2: #c1afe8;
+    --hl_Keyword-3: #d5dcdb;
+    --hl_Keyword-4: #e5a5bd;
+    --hl_Keyword-5: #72c9c7;
+    --hl_Keyword-6: #c1afe8;
+  }
+}
+
+html {
+  background: var(--canvas);
+  font-feature-settings: "kern", "palt";
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: var(--canvas);
+}
+
+article {
+  background: var(--background);
+  line-height: 1.72;
+}
+
+@media (min-width: 902px) {
+  article {
+    margin-block: 24px;
+    box-shadow: 0 16px 48px rgb(37 52 58 / 8%);
+  }
+}
+
+::selection {
+  background: var(--selection);
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  color: var(--heading-color);
+  letter-spacing: -0.018em;
+}
+
+.markdown-body h1 {
+  border-bottom-width: 2px;
+  border-image: linear-gradient(90deg, var(--accent), var(--secondary), transparent 80%) 1;
+}
+
+.markdown-body h2 {
+  border-bottom-color: var(--header-bottom-border);
+}
+
+.markdown-body h3 {
+  color: var(--secondary);
+}
+
+.markdown-body a {
+  text-decoration-color: color-mix(in srgb, var(--link) 38%, transparent);
+  text-underline-offset: .18em;
+}
+
+.markdown-body a:hover {
+  text-decoration-thickness: 2px;
+}
+
+.markdown-body a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.markdown-body strong {
+  color: var(--heading-color);
+}
+
+.markdown-body ul li::marker,
+.markdown-body ol li::marker {
+  color: var(--accent);
+}
+
+.markdown-body blockquote {
+  padding: .75rem 1rem;
+  background: var(--quote-background);
+  border-left-color: var(--blockquote-border);
+  border-radius: 0 8px 8px 0;
+}
+
+.markdown-body table {
+  border-radius: 8px;
+}
+
+.markdown-body table th {
+  color: var(--heading-color);
+  background: var(--thead-background);
+}
+
+.markdown-body code,
+.markdown-body tt {
+  color: var(--inline-code);
+}
+
+.markdown-body pre,
+.markdown-body .highlight pre {
+  color: var(--textPrimary);
+  border: 1px solid var(--body-border-color);
+  border-radius: 8px;
+}
+
+.markdown-body pre code,
+.markdown-body pre tt {
+  color: inherit;
+}
+
+.markdown-body mark {
+  color: var(--heading-color);
+  background: var(--mark-background);
+  border-radius: 3px;
+}
+
+.markdown-body input[type="checkbox"] {
+  accent-color: var(--accent);
+}
